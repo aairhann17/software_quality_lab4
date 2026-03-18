@@ -1,10 +1,7 @@
 # Lab 4: ML Model Testing and Evaluation
 
 Machine Learning (ML) models play a crucial role in modern software. Testing modern software should include testing the ML models. The design of the ML model is outside the lab's scope. Only ML 
-testing will be covered. Different problems will be considered. For each problem type, corresponding metrics are utilized.
-
-## Repository:   
-[https://github.com/zubxxr/SOFE3980U-Lab4](https://github.com/zubxxr/SOFE3980U-Lab4) 
+testing will be covered. Different problems will be considered. For each problem type, corresponding metrics are utilized. 
 
 ## 1. Single-variable Continuous Regression Problem
 
@@ -215,9 +212,25 @@ Confusion matrix
         y^=5    44      130     237     139     501
 ```
 
-## Discussion
-Compare accuracy, recall, and precision by describing the interpretation of each of them. Using examples to show which one of them is more important than the others.
+## Submission Summary
 
-## Deliverables
-1. A GitHub link of the code of the three tasks
-2. Report about the discussion part and the results of the tasks
+The starter programs were extended from CSV preview scripts into complete model-evaluation tools for all required tasks.
+
+### Task 1: Single-variable Continuous Regression ([SVCR/src/main/java/com/ontariotechu/sofe3980U/App.java](SVCR/src/main/java/com/ontariotechu/sofe3980U/App.java))
+- Implemented full-dataset evaluation for model_1.csv, model_2.csv, and model_3.csv.
+- Computed MSE, MAE, and MARE for each model file.
+- Reported the best model per metric using minimum-error selection.
+
+### Task 2: Single-variable Binary Regression ([SVBR/src/main/java/com/ontariotechu/sofe3980U/App.java](SVBR/src/main/java/com/ontariotechu/sofe3980U/App.java))
+- Implemented full-dataset evaluation for model_1.csv, model_2.csv, and model_3.csv.
+- Computed BCE, confusion matrix (TP/FP/FN/TN), Accuracy, Precision, Recall, F1 score, and AUC-ROC.
+- Generated ROC points across thresholds 0.00-1.00 and calculated AUC using trapezoidal integration.
+- Reported the best model according to each evaluation metric.
+
+### Task 3: Multiclass Classification ([MCC/src/main/java/com/ontariotechu/sofe3980U/App.java](MCC/src/main/java/com/ontariotechu/sofe3980U/App.java))
+- Implemented full-dataset evaluation for model.csv.
+- Computed multiclass cross-entropy (CE).
+- Built and printed a 5x5 confusion matrix (predicted class as rows, actual class as columns).
+
+### Build Compatibility
+- Updated Java compiler settings to 1.8 in [SVCR/pom.xml](SVCR/pom.xml) and [MCC/pom.xml](MCC/pom.xml) to ensure Maven builds on modern JDK versions.
